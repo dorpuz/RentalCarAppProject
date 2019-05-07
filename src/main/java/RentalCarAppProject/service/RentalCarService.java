@@ -8,4 +8,5 @@ public interface RentalCarService {
   List<CarDTO> getAll();
   List<CarDTO> getAutoSegment(char segment);
   CarDTO getOne(int id);
+  void rent(int id);
 }

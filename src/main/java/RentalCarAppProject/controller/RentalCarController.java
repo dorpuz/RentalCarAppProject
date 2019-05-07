@@ -28,4 +28,9 @@ public class RentalCarController {
   public CarDTO getOne(@PathVariable int id) {
     return rentalCarService.getOne(id);
   }
+
+  @PostMapping("cars/{id}")
+  public void update(@PathVariable int id){
+    rentalCarService.rent(id);
+  }
 }

@@ -33,11 +33,15 @@ public class RentalCarServiceImpl implements RentalCarService {
             .stream()
             .map(converter::convert)
             .collect(Collectors.toList());
-
   }
 
   @Override
   public CarDTO getOne(int id) {
     return converter.convert(carDao.findById(id));
+  }
+
+  @Override
+  public void rent(int id) {
+    carDao.findById(id).setRented(true);
   }
 }

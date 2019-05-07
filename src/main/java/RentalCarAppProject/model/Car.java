@@ -10,7 +10,7 @@ public class Car {
   @GeneratedValue
   private Integer idCar;
   @Column(nullable = false)
-  private char segment;
+  private char carClass;
   @Column(nullable = false)
   private String marka;
   @Column(nullable = false)
@@ -27,8 +27,8 @@ public class Car {
   public Car() {
   }
 
-  public Car(char segment, String marka, String model, String color, double price, boolean isRented, int nrOfSeats) {
-    this.segment = segment;
+  public Car(char carClass, String marka, String model, String color, double price, boolean isRented, int nrOfSeats) {
+    this.carClass = carClass;
     this.marka = marka;
     this.model = model;
     this.color = color;
@@ -86,11 +86,11 @@ public class Car {
   }
 
   public char getSegment() {
-    return segment;
+    return carClass;
   }
 
-  public void setSegment(char segment) {
-    this.segment = segment;
+  public void setSegment(char carClass) {
+    this.carClass = carClass;
   }
 
   public Integer getIdCar() {

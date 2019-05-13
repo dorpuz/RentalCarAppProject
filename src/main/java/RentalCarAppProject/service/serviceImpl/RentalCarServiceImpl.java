@@ -20,8 +20,8 @@ public class RentalCarServiceImpl implements RentalCarService {
   ComponentConverter converter;
 
   @Override
-  public List<CarDTO> getAutoSegment(char segment) {
-    return carDao.findAllBySegmentIsLike(segment)
+  public List<CarDTO> getAutoSegment(String carClass) {
+    return carDao.findAllByCarClass(carClass)
             .stream()
             .map(converter::convert)
             .collect(Collectors.toList());

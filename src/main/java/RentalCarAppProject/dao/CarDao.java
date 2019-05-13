@@ -10,6 +10,6 @@ import java.util.List;
 public interface CarDao extends CrudRepository<Car,Integer> {
 
   List<Car> findAll();
-  List<Car> findAllBySegmentIsLike(char c);
+  List<Car> findAllByCarClass(String carClass);
   Car findById(int id);
 }

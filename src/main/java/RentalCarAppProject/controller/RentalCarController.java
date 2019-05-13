@@ -19,9 +19,9 @@ public class RentalCarController {
     return rentalCarService.getAll();
   }
 
-  @GetMapping("/cars/segment")
-  public List<CarDTO> getAutoSegment(@RequestParam char segment){
-    return rentalCarService.getAutoSegment(segment);
+  @GetMapping("/cars/{carClass}")
+  public List<CarDTO> getAutoSegment(@PathVariable String carClass){
+    return rentalCarService.getAutoSegment(carClass);
   }
 
   @GetMapping("/cars/{id}")

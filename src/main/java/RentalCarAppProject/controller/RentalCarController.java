@@ -19,18 +19,23 @@ public class RentalCarController {
     return rentalCarService.getAll();
   }
 
-  @GetMapping("/cars/{carClass}")
-  public List<CarDTO> getAutoSegment(@PathVariable String carClass){
-    return rentalCarService.getAutoSegment(carClass);
-  }
-
   @GetMapping("/cars/{id}")
   public CarDTO getOne(@PathVariable int id) {
     return rentalCarService.getOne(id);
   }
 
-  @PostMapping("cars/{id}")
+  @GetMapping("/rent-car/{id}")
+  public CarDTO rentOne(@PathVariable int id) {
+    return rentalCarService.getOne(id);
+  }
+
+ /* @PostMapping("cars/{id}")
   public void update(@PathVariable int id){
     rentalCarService.rent(id);
-  }
+  }*/
+
+  /*@PostMapping("/rent-car/{id}/confirm")
+  public void confirmOne(@PathVariable int id) {
+    rentalCarService.rent(id);
+  }*/
 }
